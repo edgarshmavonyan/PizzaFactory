@@ -1,9 +1,8 @@
 #include "ordermanager.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
-int main() {
-    CPizzaChef Michael;
-    Waiter John;
-    John.getOrder();
-    auto myOrder = John.manageOrder(&Michael);
-    return EXIT_SUCCESS;
+int main(int argc, char* argv[]) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
