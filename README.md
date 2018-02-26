@@ -7,4 +7,5 @@ Then, use getOrder() and manageOrder() methods to order meal.
 Some features were tested with google Test.
 
 We used Builder pattern in the project.
-#Enjoy yummy pizza!
+
+# Enjoy yummy pizza!
