@@ -18,8 +18,11 @@ public:
 
 	void SetDough(const std::string& inputDough);
 	void SetSauce(const std::string& inputSauce);
+    std::string GetDough() const;
+    std::string GetSauce() const;
 	void AddIngredients(const std::string& inputIngredient);
+    std::string GetIngredients() const;
 	void SetPrice(int inputPrice);
-
-	void printPizza();
+	void printPizza() const;
+    int GetPrice() const;
 };

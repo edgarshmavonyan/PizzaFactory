@@ -1,6 +1,4 @@
-#include "ordermanager.h"
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
+#include "test.h"
 
 int main(int argc, char* argv[]) {
     testing::InitGoogleTest(&argc, argv);
