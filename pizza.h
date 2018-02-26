@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <memory>
 
 enum PriceList{
     HAWAIIAN = 120,
