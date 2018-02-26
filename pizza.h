@@ -1,6 +1,13 @@
 #include <iostream>
 #include <vector>
 
+enum PriceList{
+    HAWAIIAN = 120,
+    MARGARITA = 100,
+    DIABLO = 150,
+    CUSTOM = 300
+};
+
 class CPizza {
 	std::string dough;
 	std::string sauce;

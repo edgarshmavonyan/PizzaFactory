@@ -20,6 +20,7 @@ void Waiter::getOrder() {
 
 std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
     std::vector<std::shared_ptr<CPizza> > order;
+    int cost = 0;
     for (auto& curPizza: curOrder) {
         bool inMenu = false;
         if (curPizza.first == "Hawaiian") {
@@ -43,12 +44,15 @@ std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
             continue;
         }
         for (int j = 0; j < curPizza.second; j++) {
-            curChef->BuildPizza();
+            curChef->buildPizza();
             order.push_back(curChef->GetPizza());
         }
+        cost += curPizza.second * curChef->getNextPizzaPrice();
         curChef->becomeFree();
-        order.back().get()->printPizza();
+        order.back()->printPizza();
     }
+    std::cout << "The cost of your order is... " << cost << std::endl;
+    std::cout << "Here is the bill" << std::endl;
     curOrder.clear();
     return order;
 }

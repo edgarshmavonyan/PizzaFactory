@@ -15,10 +15,6 @@ void CDiabloPizzaBuilder::build_ingredients() {
     m_pizza->AddIngredients("Mozzarella");
 }
 
-void CDiabloPizzaBuilder::build_price() {
-    m_pizza->SetPrice(150);
-}
-
 void CHawaiianPizzaBuilder::build_dough() {
     m_pizza->SetDough("basic");
 }
@@ -34,10 +30,6 @@ void CHawaiianPizzaBuilder::build_ingredients() {
     m_pizza->AddIngredients("Mozzarella");
 }
 
-void CHawaiianPizzaBuilder::build_price() {
-    m_pizza->SetPrice(120);
-}
-
 void CMargaritaPizzaBuilder::build_dough() {
     m_pizza->SetDough("thin");
 }
@@ -50,10 +42,6 @@ void CMargaritaPizzaBuilder::build_ingredients() {
     m_pizza->AddIngredients("Tomatoes");
     m_pizza->AddIngredients("Mozzarella");
     m_pizza->AddIngredients("Basil");
-}
-
-void CMargaritaPizzaBuilder::build_price() {
-    m_pizza->SetPrice(100);
 }
 
 void CNewPizzaBuilder::build_dough() {
@@ -80,9 +68,4 @@ void CNewPizzaBuilder::build_ingredients() {
         std::cin >> currentIngredient;
         m_pizza->AddIngredients(currentIngredient);
     }
-}
-
-void CNewPizzaBuilder::build_price() {
-    std::cout << "The price of your pizza will be... 300" << std::endl;
-    m_pizza->SetPrice(300);
 }

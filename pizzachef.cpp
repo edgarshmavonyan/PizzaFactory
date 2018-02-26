@@ -12,13 +12,17 @@ std::shared_ptr<CPizza> CPizzaChef::GetPizza() {
     return pizzaBuilder->getPizza();
 }
 
-void CPizzaChef::BuildPizza() {
+void CPizzaChef::buildPizza() {
     pizzaBuilder->createPizza();
     pizzaBuilder->build_dough();
     pizzaBuilder->build_sauce();
     pizzaBuilder->build_ingredients();
     pizzaBuilder->build_price();
     // РАБОТАЕТ ПЕЧЬ
+}
+
+int CPizzaChef::getNextPizzaPrice() {
+    return pizzaBuilder->getPizzaPrice();
 }
 
 void CPizzaChef::becomeFree() {

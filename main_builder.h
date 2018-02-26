@@ -2,40 +2,36 @@
 
 class CDiabloPizzaBuilder: public IPizzaBuilder {
 public:
-	CDiabloPizzaBuilder() : IPizzaBuilder() {}
+	CDiabloPizzaBuilder() : IPizzaBuilder(PriceList::DIABLO) {}
 	~CDiabloPizzaBuilder() final = default;
 	void build_dough() final;
 	void build_sauce() final;
 	void build_ingredients() final;
-	void build_price() final;
 };
 
 class CHawaiianPizzaBuilder: public IPizzaBuilder {
 public:
-    CHawaiianPizzaBuilder() : IPizzaBuilder() {}
+    CHawaiianPizzaBuilder() : IPizzaBuilder(PriceList::HAWAIIAN) {}
     ~CHawaiianPizzaBuilder() final = default;
     void build_dough() final;
     void build_sauce() final;
     void build_ingredients() final;
-    void build_price() final;
 };
 
 class CMargaritaPizzaBuilder: public IPizzaBuilder {
 public:
-    CMargaritaPizzaBuilder() : IPizzaBuilder() {}
+    CMargaritaPizzaBuilder() : IPizzaBuilder(PriceList::MARGARITA) {}
     ~CMargaritaPizzaBuilder() final = default;
     void build_dough() final;
     void build_sauce() final;
     void build_ingredients() final;
-    void build_price() final;
 };
 
 class CNewPizzaBuilder: public IPizzaBuilder {
 public:
-    CNewPizzaBuilder() : IPizzaBuilder() {}
+    CNewPizzaBuilder() : IPizzaBuilder(PriceList::CUSTOM) {}
     ~CNewPizzaBuilder() final = default;
     void build_dough() final;
     void build_sauce() final;
     void build_ingredients() final;
-    void build_price() final;
 };

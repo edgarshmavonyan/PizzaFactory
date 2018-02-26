@@ -8,6 +8,7 @@ public:
     ~CPizzaChef();
     void SetPizzaBuilder(IPizzaBuilder* builder);
     std::shared_ptr<CPizza> GetPizza();
-    void BuildPizza();
+    void buildPizza();
+    int getNextPizzaPrice();
     void becomeFree();
 };
