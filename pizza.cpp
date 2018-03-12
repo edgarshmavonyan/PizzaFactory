@@ -1,47 +1,47 @@
 #include "pizza.h"
 
-void CPizza::SetDough(const std::string& inputDough) {
-	dough = inputDough;
+void CPizza::setDough(const std::string &inputDough) {
+	_dough = inputDough;
 }
 
-std::string CPizza::GetDough() const {
-    return dough;
+std::string CPizza::getDough() const {
+    return _dough;
 }
 
-void CPizza::SetSauce(const std::string& inputSauce) {
-	sauce = inputSauce;
+void CPizza::setSauce(const std::string &inputSauce) {
+	_sauce = inputSauce;
 }
 
-std::string CPizza::GetSauce() const {
-    return sauce;
+std::string CPizza::getSauce() const {
+    return _sauce;
 }
 
-void CPizza::AddIngredients(const std::string& inputIngredient) {
-	ingredients.push_back(inputIngredient);
+void CPizza::addIngredients(const std::string &inputIngredient) {
+	_ingredients.push_back(inputIngredient);
 }
 
-std::string CPizza::GetIngredients() const {
+std::string CPizza::getIngredients() const {
     std::string result;
-    for (const auto& ingredient: ingredients){
+    for (const auto& ingredient: _ingredients){
         result += ingredient + ' ';
     }
     return result;
 }
 
-void CPizza::SetPrice(int inputPrice) {
-	price = inputPrice;
+void CPizza::setPrice(int inputPrice) {
+	_price = inputPrice;
 }
 
 void CPizza::printPizza() const {
-	std::cout << "The dough is " << dough << std::endl;
-	std::cout << "The sauce is " << sauce << std::endl;
+	std::cout << "The _dough is " << _dough << std::endl;
+	std::cout << "The sauce is " << _sauce << std::endl;
 	std::cout << "Finally, the ingredients used in your pizza are ";
-	for (const std::string& ingredient : ingredients)
+	for (const std::string& ingredient : _ingredients)
 		std::cout << ingredient << ' ';
 	std::cout << std::endl << "You wanna eat it, don't you?" << std::endl;
 }
 
-int CPizza::GetPrice() const {
-    return price;
+int CPizza::getPrice() const {
+    return _price;
 }
 

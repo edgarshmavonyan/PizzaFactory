@@ -1,17 +1,17 @@
 #include "pizzabuilder.h"
 
 std::shared_ptr<CPizza> IPizzaBuilder::getPizza() {
-	return m_pizza;
+	return _mPizza;
 }
 
 int IPizzaBuilder::getPizzaPrice() {
-    return pizza_price;
+    return _pizzaPrice;
 }
 
 void IPizzaBuilder::createPizza() {
-	m_pizza.reset(new CPizza());
+	_mPizza.reset(new CPizza());
 }
 
-void IPizzaBuilder::build_price() {
-    m_pizza->SetPrice(pizza_price);
+void IPizzaBuilder::buildPrice() {
+    _mPizza->setPrice(_pizzaPrice);
 }

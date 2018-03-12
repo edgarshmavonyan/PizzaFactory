@@ -4,16 +4,16 @@
 
 class IPizzaBuilder {
 protected:
-	std::shared_ptr<CPizza> m_pizza;
-    const PriceList pizza_price;
+	std::shared_ptr<CPizza> _mPizza;
+    const PriceList _pizzaPrice;
 public:
-    explicit IPizzaBuilder(PriceList curPrice) : pizza_price(curPrice) {}
+    explicit IPizzaBuilder(PriceList curPrice) : _pizzaPrice(curPrice) {}
 	virtual ~IPizzaBuilder() = default;
 	std::shared_ptr<CPizza> getPizza();
 	void createPizza();
     int getPizzaPrice();
-	virtual void build_dough() = 0;
-	virtual void build_sauce() = 0;
-	virtual void build_ingredients() = 0;
-    void build_price();
+	virtual void buildDough() = 0;
+	virtual void buildSauce() = 0;
+	virtual void buildIngredients() = 0;
+    void buildPrice();
 };

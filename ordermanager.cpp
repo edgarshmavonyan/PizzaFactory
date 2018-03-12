@@ -12,7 +12,7 @@ void Waiter::getOrder() {
         std::cout << "How much pizzas of this type would you like?" << std::endl;
         std::cin >> curNumber;
         if (curNumber > 0)
-            curOrder.emplace_back(std::make_pair(pizzaType, curNumber));
+            _curOrder.emplace_back(std::make_pair(pizzaType, curNumber));
         else
             std::cout << "Stop joking, please." << std::endl;
     }
@@ -21,22 +21,22 @@ void Waiter::getOrder() {
 std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
     std::vector<std::shared_ptr<CPizza> > order;
     int cost = 0;
-    for (auto& curPizza: curOrder) {
+    for (auto& curPizza: _curOrder) {
         bool inMenu = false;
         if (curPizza.first == "Hawaiian") {
-            curChef->SetPizzaBuilder(new CHawaiianPizzaBuilder);
+            curChef->setPizzaBuilder(new CHawaiianPizzaBuilder);
             inMenu = true;
         }
         if (curPizza.first == "Margarita") {
-            curChef->SetPizzaBuilder(new CMargaritaPizzaBuilder);
+            curChef->setPizzaBuilder(new CMargaritaPizzaBuilder);
             inMenu = true;
         }
         if (curPizza.first == "Diablo") {
-            curChef->SetPizzaBuilder(new CDiabloPizzaBuilder);
+            curChef->setPizzaBuilder(new CDiabloPizzaBuilder);
             inMenu = true;
         }
         if (curPizza.first == "Custom") {
-            curChef->SetPizzaBuilder(new CNewPizzaBuilder);
+            curChef->setPizzaBuilder(new CNewPizzaBuilder);
             inMenu = true;
         }
         if (!inMenu) {
@@ -45,7 +45,7 @@ std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
         }
         for (int j = 0; j < curPizza.second; j++) {
             curChef->buildPizza();
-            order.push_back(curChef->GetPizza());
+            order.push_back(curChef->getPizza());
         }
         cost += curPizza.second * curChef->getNextPizzaPrice();
         curChef->becomeFree();
@@ -53,6 +53,6 @@ std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
     }
     std::cout << "The cost of your order is... " << cost << std::endl;
     std::cout << "Here is the bill" << std::endl;
-    curOrder.clear();
+    _curOrder.clear();
     return order;
 }

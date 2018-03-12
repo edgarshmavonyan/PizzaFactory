@@ -1,64 +1,64 @@
 #include "main_builder.h"
 
-void CDiabloPizzaBuilder::build_dough() {
-    m_pizza->SetDough("thick");
+void CDiabloPizzaBuilder::buildDough() {
+    _mPizza->setDough("thick");
 }
 
-void CDiabloPizzaBuilder::build_sauce() {
-    m_pizza->SetSauce("hot");
+void CDiabloPizzaBuilder::buildSauce() {
+    _mPizza->setSauce("hot");
 }
 
-void CDiabloPizzaBuilder::build_ingredients() {
-    m_pizza->AddIngredients("Pepperoni");
-    m_pizza->AddIngredients("Frankfurter");
-    m_pizza->AddIngredients("Red chilli");
-    m_pizza->AddIngredients("Mozzarella");
+void CDiabloPizzaBuilder::buildIngredients() {
+    _mPizza->addIngredients("Pepperoni");
+    _mPizza->addIngredients("Frankfurter");
+    _mPizza->addIngredients("Red chilli");
+    _mPizza->addIngredients("Mozzarella");
 }
 
-void CHawaiianPizzaBuilder::build_dough() {
-    m_pizza->SetDough("basic");
+void CHawaiianPizzaBuilder::buildDough() {
+    _mPizza->setDough("basic");
 }
 
-void CHawaiianPizzaBuilder::build_sauce() {
-    m_pizza->SetSauce("sweet");
+void CHawaiianPizzaBuilder::buildSauce() {
+    _mPizza->setSauce("sweet");
 }
 
-void CHawaiianPizzaBuilder::build_ingredients() {
-    m_pizza->AddIngredients("Pineapple");
-    m_pizza->AddIngredients("Bacon");
-    m_pizza->AddIngredients("Ham");
-    m_pizza->AddIngredients("Mozzarella");
+void CHawaiianPizzaBuilder::buildIngredients() {
+    _mPizza->addIngredients("Pineapple");
+    _mPizza->addIngredients("Bacon");
+    _mPizza->addIngredients("Ham");
+    _mPizza->addIngredients("Mozzarella");
 }
 
-void CMargaritaPizzaBuilder::build_dough() {
-    m_pizza->SetDough("thin");
+void CMargaritaPizzaBuilder::buildDough() {
+    _mPizza->setDough("thin");
 }
 
-void CMargaritaPizzaBuilder::build_sauce() {
-    m_pizza->SetSauce("tomato");
+void CMargaritaPizzaBuilder::buildSauce() {
+    _mPizza->setSauce("tomato");
 }
 
-void CMargaritaPizzaBuilder::build_ingredients() {
-    m_pizza->AddIngredients("Tomatoes");
-    m_pizza->AddIngredients("Mozzarella");
-    m_pizza->AddIngredients("Basil");
+void CMargaritaPizzaBuilder::buildIngredients() {
+    _mPizza->addIngredients("Tomatoes");
+    _mPizza->addIngredients("Mozzarella");
+    _mPizza->addIngredients("Basil");
 }
 
-void CNewPizzaBuilder::build_dough() {
-    std::cout << "Choose a dough for your pizza" << std::endl;
+void CNewPizzaBuilder::buildDough() {
+    std::cout << "Choose a _dough for your pizza" << std::endl;
     std::string inputDough;
     std::cin >> inputDough;
-    m_pizza->SetDough(inputDough);
+    _mPizza->setDough(inputDough);
 }
 
-void CNewPizzaBuilder::build_sauce() {
+void CNewPizzaBuilder::buildSauce() {
     std::cout << "Choose a sauce for your pizza" << std::endl;
     std::string inputSauce;
     std::cin >> inputSauce;
-    m_pizza->SetSauce(inputSauce);
+    _mPizza->setSauce(inputSauce);
 }
 
-void CNewPizzaBuilder::build_ingredients() {
+void CNewPizzaBuilder::buildIngredients() {
     std::cout << "How much ingredients do you want?" << std::endl;
     int number_of_ingredients;
     std::cin >> number_of_ingredients;
@@ -66,6 +66,6 @@ void CNewPizzaBuilder::build_ingredients() {
     for (int i = 0; i < number_of_ingredients; i++) {
         std::string currentIngredient;
         std::cin >> currentIngredient;
-        m_pizza->AddIngredients(currentIngredient);
+        _mPizza->addIngredients(currentIngredient);
     }
 }

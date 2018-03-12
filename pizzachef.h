@@ -2,12 +2,12 @@
 
 class CPizzaChef {
 private:
-    IPizzaBuilder* pizzaBuilder;
+    IPizzaBuilder* _pizzaBuilder;
 public:
-    CPizzaChef() : pizzaBuilder(nullptr) {}
+    CPizzaChef() : _pizzaBuilder(nullptr) {}
     ~CPizzaChef();
-    void SetPizzaBuilder(IPizzaBuilder* builder);
-    std::shared_ptr<CPizza> GetPizza();
+    void setPizzaBuilder(IPizzaBuilder *builder);
+    std::shared_ptr<CPizza> getPizza();
     void buildPizza();
     int getNextPizzaPrice();
     void becomeFree();

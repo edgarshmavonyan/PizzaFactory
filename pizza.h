@@ -10,20 +10,20 @@ enum PriceList{
 };
 
 class CPizza {
-	std::string dough;
-	std::string sauce;
-	std::vector<std::string> ingredients;
-	int price;
+	std::string _dough;
+	std::string _sauce;
+	std::vector<std::string> _ingredients;
+	int _price;
 
 public:
 
-	void SetDough(const std::string& inputDough);
-	void SetSauce(const std::string& inputSauce);
-    std::string GetDough() const;
-    std::string GetSauce() const;
-	void AddIngredients(const std::string& inputIngredient);
-    std::string GetIngredients() const;
-	void SetPrice(int inputPrice);
+	void setDough(const std::string &inputDough);
+	void setSauce(const std::string &inputSauce);
+    std::string getDough() const;
+    std::string getSauce() const;
+	void addIngredients(const std::string &inputIngredient);
+    std::string getIngredients() const;
+	void setPrice(int inputPrice);
 	void printPizza() const;
-    int GetPrice() const;
+    int getPrice() const;
 };

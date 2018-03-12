@@ -1,31 +1,31 @@
 #include "pizzachef.h"
 
 CPizzaChef::~CPizzaChef() {
-    delete pizzaBuilder;
+    delete _pizzaBuilder;
 }
 
-void CPizzaChef::SetPizzaBuilder(IPizzaBuilder *builder) {
-    pizzaBuilder = builder;
+void CPizzaChef::setPizzaBuilder(IPizzaBuilder *builder) {
+    _pizzaBuilder = builder;
 }
 
-std::shared_ptr<CPizza> CPizzaChef::GetPizza() {
-    return pizzaBuilder->getPizza();
+std::shared_ptr<CPizza> CPizzaChef::getPizza() {
+    return _pizzaBuilder->getPizza();
 }
 
 void CPizzaChef::buildPizza() {
-    pizzaBuilder->createPizza();
-    pizzaBuilder->build_dough();
-    pizzaBuilder->build_sauce();
-    pizzaBuilder->build_ingredients();
-    pizzaBuilder->build_price();
+    _pizzaBuilder->createPizza();
+    _pizzaBuilder->buildDough();
+    _pizzaBuilder->buildSauce();
+    _pizzaBuilder->buildIngredients();
+    _pizzaBuilder->buildPrice();
     // РАБОТАЕТ ПЕЧЬ
 }
 
 int CPizzaChef::getNextPizzaPrice() {
-    return pizzaBuilder->getPizzaPrice();
+    return _pizzaBuilder->getPizzaPrice();
 }
 
 void CPizzaChef::becomeFree() {
-    delete pizzaBuilder;
-    pizzaBuilder = nullptr;
+    delete _pizzaBuilder;
+    _pizzaBuilder = nullptr;
 }

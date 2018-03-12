@@ -2,7 +2,7 @@
 
 class Waiter {
 private:
-    std::vector<std::pair<std::string, int> > curOrder;
+    std::vector<std::pair<std::string, int> > _curOrder;
 public:
     Waiter() = default;
     void getOrder();
