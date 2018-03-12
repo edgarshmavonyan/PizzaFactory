@@ -13,5 +13,5 @@ void IPizzaBuilder::createPizza() {
 }
 
 void IPizzaBuilder::buildPrice() {
-    _mPizza->setPrice(_pizzaPrice);
+    _mPizza->_setPrice(_pizzaPrice);
 }

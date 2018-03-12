@@ -1,6 +1,6 @@
 #include "pizza.h"
 
-void CPizza::setDough(const std::string &inputDough) {
+void CPizza::_setDough(const std::string &inputDough) {
 	_dough = inputDough;
 }
 
@@ -8,7 +8,7 @@ std::string CPizza::getDough() const {
     return _dough;
 }
 
-void CPizza::setSauce(const std::string &inputSauce) {
+void CPizza::_setSauce(const std::string &inputSauce) {
 	_sauce = inputSauce;
 }
 
@@ -16,7 +16,7 @@ std::string CPizza::getSauce() const {
     return _sauce;
 }
 
-void CPizza::addIngredients(const std::string &inputIngredient) {
+void CPizza::_addIngredients(const std::string &inputIngredient) {
 	_ingredients.push_back(inputIngredient);
 }
 
@@ -28,7 +28,7 @@ std::string CPizza::getIngredients() const {
     return result;
 }
 
-void CPizza::setPrice(int inputPrice) {
+void CPizza::_setPrice(int inputPrice) {
 	_price = inputPrice;
 }
 
