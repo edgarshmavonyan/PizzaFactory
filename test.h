@@ -49,7 +49,7 @@ TEST(factory, moscowTest) {
     auto greekPizza = moscowFactory.create_greek();
     auto caesarPizza = moscowFactory.create_caesar();
     auto vinegretPizza = moscowFactory.create_vinegret();
-    
+
     EXPECT_EQ(greekPizza->getIngredients(), "tomatoes, cucumbers, onions, feta cheese");
     EXPECT_EQ(greekPizza->getStyle(), "Moscow");
     EXPECT_EQ(caesarPizza->getIngredients(), "romaine lettuce, croutons, parmesan cheese, chicken");
@@ -63,7 +63,7 @@ TEST(factor, romeTest) {
     auto greekPizza = moscowFactory.create_greek();
     auto caesarPizza = moscowFactory.create_caesar();
     auto vinegretPizza = moscowFactory.create_vinegret();
-
+    
     EXPECT_EQ(greekPizza->getIngredients(), "tomatoes, cucumbers, onions, feta cheese");
     EXPECT_EQ(greekPizza->getStyle(), "Rome");
     EXPECT_EQ(caesarPizza->getIngredients(), "romaine lettuce, croutons, parmesan cheese, chicken");
