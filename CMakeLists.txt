@@ -7,7 +7,7 @@ add_subdirectory(lib/googletest-master)
 include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
 
-set(SOURCE_FILES pizza.cpp pizzabuilder.cpp main_builder.cpp pizzachef.cpp ordermanager.cpp main.cpp)
+set(SOURCE_FILES pizza.cpp pizzabuilder.cpp main_builder.cpp pizzachef.cpp ordermanager.cpp salad.cpp concrete_salads.cpp factory.cpp main.cpp)
 
 add_executable(PizzaFactory ${SOURCE_FILES})
 target_link_libraries(PizzaFactory gtest gtest_main)

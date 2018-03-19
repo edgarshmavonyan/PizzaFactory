@@ -24,19 +24,19 @@ std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
     for (auto& curPizza: _curOrder) {
         bool inMenu = false;
         if (curPizza.first == "Hawaiian") {
-            curChef->setPizzaBuilder(new CHawaiianPizzaBuilder);
+            curChef->setPizzaBuilder(std::make_shared<CHawaiianPizzaBuilder>());
             inMenu = true;
         }
         if (curPizza.first == "Margarita") {
-            curChef->setPizzaBuilder(new CMargaritaPizzaBuilder);
+            curChef->setPizzaBuilder(std::make_shared<CMargaritaPizzaBuilder>());
             inMenu = true;
         }
         if (curPizza.first == "Diablo") {
-            curChef->setPizzaBuilder(new CDiabloPizzaBuilder);
+            curChef->setPizzaBuilder(std::make_shared<CDiabloPizzaBuilder>());
             inMenu = true;
         }
         if (curPizza.first == "Custom") {
-            curChef->setPizzaBuilder(new CNewPizzaBuilder);
+            curChef->setPizzaBuilder(std::make_shared<CNewPizzaBuilder>());
             inMenu = true;
         }
         if (!inMenu) {
@@ -48,7 +48,6 @@ std::vector<std::shared_ptr<CPizza> > Waiter::manageOrder(CPizzaChef* curChef) {
             order.push_back(curChef->getPizza());
         }
         cost += curPizza.second * curChef->getNextPizzaPrice();
-        curChef->becomeFree();
         order.back()->printPizza();
     }
     std::cout << "The cost of your order is... " << cost << std::endl;

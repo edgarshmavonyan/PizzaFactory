@@ -45,7 +45,7 @@ void CMargaritaPizzaBuilder::buildIngredients() {
 }
 
 void CNewPizzaBuilder::buildDough() {
-    std::cout << "Choose a _dough for your pizza" << std::endl;
+    std::cout << "Choose a dough for your pizza" << std::endl;
     std::string inputDough;
     std::cin >> inputDough;
     _mPizza->_setDough(inputDough);
